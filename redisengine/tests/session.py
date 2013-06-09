@@ -3,7 +3,7 @@
 import unittest
 
 from redisengine.session import sessionmaker
-from redisengine.connections import Connection
+from redisengine.connection import Connection
 
 
 class SessionMakerTest(unittest.TestCase):

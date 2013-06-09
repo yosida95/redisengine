@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from .connections import Connection
+from .connection import Connection
 
 
 class SessionBase(object):

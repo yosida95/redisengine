@@ -4,7 +4,7 @@ import unittest
 
 from mock import patch
 
-from redisengine.connections import Connection
+from redisengine.connection import Connection
 
 
 class ConnectionTest(unittest.TestCase):
@@ -21,7 +21,7 @@ class ConnectionTest(unittest.TestCase):
         self.assertEqual(inst.db, 1)
 
     def test_connect(self):
-        with patch(u'redisengine.connections.StrictRedis') as mock:
+        with patch(u'redisengine.connection.StrictRedis') as mock:
             mock.return_value = True
 
             inst = Connection()
@@ -34,7 +34,7 @@ class ConnectionTest(unittest.TestCase):
             self.assertEqual(kwargs[u'db'], 0)
 
     def test_connection(self):
-        with patch(u'redisengine.connections.StrictRedis') as mock:
+        with patch(u'redisengine.connection.StrictRedis') as mock:
             value = mock.return_value
 
             inst = Connection()
