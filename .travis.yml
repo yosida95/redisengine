@@ -1,0 +1,12 @@
+language: python
+env:
+    matrix:
+        - TOXENV="py27"
+        - TOXENV="coverage"
+install:
+    - pip install tox
+    - if test "$TOXENV" = "coverage"; then pip install coveralls; fi
+script:
+    - tox
+after_success:
+    - if test "$TOXENV" = "coverage"; then coveralls; fi
